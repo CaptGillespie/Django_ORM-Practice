@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookie Monster</title>
+</head>
+
+<body>
+    <div class = "container">
+        <h1>{{author.first_name}} {{author.last_name}}</h1>
+        <h3>ID: {{author.id}}</h3>
+        <div class="notes">
+            <h3>Notes </h3><input class = "note_box" type = "textarea">
+        </div>
+        <h3>Books</h3>
+            {% for book in author.books.all %}
+            <ul class="b_list">
+                <li>{{book.title}}</li>   
+            </ul>
+            {% endfor %}
+    <div class="drop_button">
+        <select name="books" class ="add_book">
+            <option value= "sharp">C#</option>
+            <option value= "java">Java</option>
+            <option value= "python">Python</option>
+            <option value= "php">PHP</option>
+            <option value= "ruby">Ruby</option>
+        </select>
+        <button class="add_button">Add</button>
+    </div>
+
+
+
+    </div>
+    
+</body>
+</html>
+
+
+<style>
+.container{
+    margin: 40px;
+    height: 500px;
+    width: 970px;
+    outline: 2px solid black;
+    padding: 10px;
+}
+h1{
+    font-size: 30px;
+    color: teal;
+}
+h3{
+    vertical-align: top;
+}
+.add_button{
+    width: 90px;
+    height: 30px;
+    box-shadow: 4px 4px solid black;
+    margin-left: 15px;
+    outline: 2px solid black;
+    font-size: 20px;
+    display: inline-block;
+    padding: 0px;
+}
+.drop_button{
+    margin-left: 25px;
+}
+.add_author{
+    outline: 2px solid black;
+    border-radius: 0px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.note_box{
+    width: 700px;
+    height: 200px;
+    display: inline-block;
+    margin-left: 20px;
+    overflow:auto;
+}
+.notes h3{
+    display: inline-block;
+}
+.b_list{
+    margin: 0px;
+}
+</style>

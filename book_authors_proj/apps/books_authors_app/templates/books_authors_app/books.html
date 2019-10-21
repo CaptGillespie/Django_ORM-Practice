@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookie Monster</title>
+</head>
+
+<body>
+    <div class = "container">
+        <h1>{{title}}</h1>
+        <h3>ID{{id}}</h3>
+
+        <div class="descrip">
+            <h3>Description </h3><input class = "descrip_box" type = "textarea">
+        </div>
+
+        
+    <div class="drop_button">
+        <h3>Authors</h3>
+        <form action="/add_here" method="POST">
+            {% csrf_token %}
+            <td><select name="Author"></td>
+            {% for a in author %}
+                <option value= "author">{{a}}</option>                       
+            {% endfor %}
+            </select>
+        <input type='submit' value='Add!'/></td>
+        </form>
+        </tr>
+    </div>
+
+
+
+    </div>
+    
+</body>
+</html>
+
+<style>
+.container{
+margin: 40px;
+height: 500px;
+width: 970px;
+outline: 2px solid black;
+padding: 10px;
+}
+h1{
+    font-size: 30px;
+    color: teal;
+}
+.add_button{
+    width: 90px;
+    height: 30px;
+    box-shadow: 4px 4px solid black;
+    margin-left: 15px;
+    outline: 2px solid black;
+    font-size: 20px;
+    display: inline-block;
+    padding: 0px;
+}
+.drop_button{
+    margin-left: 25px;
+}
+.add_author{
+    outline: 2px solid black;
+    border-radius: 0px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.descrip_box{
+    width: 700px;
+    height: 200px;
+    display: inline-block;
+    margin-left: 20px;
+    overflow:auto;
+}
+.descrip h3{
+    display: inline-block;
+    vertical-align: top;
+}
+.a_list{
+    margin: 0px;
+}
+</style>
